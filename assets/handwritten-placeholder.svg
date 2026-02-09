@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8fb" />
+      <stop offset="1" stop-color="#ffe6ef" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#paper)" />
+  <g fill="#b4004f" font-family="Georgia, serif" font-size="36">
+    <text x="80" y="120">Drop your handwritten list photo here</text>
+    <text x="80" y="190">Replace this file with: assets/handwritten.jpg</text>
+  </g>
+  <g stroke="#ff69b4" stroke-width="3" opacity="0.4">
+    <line x1="80" y1="260" x2="1120" y2="260" />
+    <line x1="80" y1="320" x2="1120" y2="320" />
+    <line x1="80" y1="380" x2="1120" y2="380" />
+    <line x1="80" y1="440" x2="1120" y2="440" />
+    <line x1="80" y1="500" x2="1120" y2="500" />
+    <line x1="80" y1="560" x2="1120" y2="560" />
+  </g>
+</svg>
