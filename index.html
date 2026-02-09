@@ -254,6 +254,61 @@
             line-height: 2;
         }
 
+        /* Yes popup */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 20;
+        }
+
+        .popup-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .popup-card {
+            background: linear-gradient(135deg, #ff69b4 0%, #dc143c 100%);
+            color: #fff;
+            padding: 32px 28px;
+            border-radius: 18px;
+            width: min(90vw, 420px);
+            text-align: center;
+            box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .popup-card h3 {
+            font-size: 2em;
+            margin-bottom: 12px;
+        }
+
+        .popup-card p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .popup-card button {
+            border: none;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05em;
+            cursor: pointer;
+            background: #fff;
+            color: #c41e3a;
+            transition: transform 0.2s ease;
+        }
+
+        .popup-card button:hover {
+            transform: scale(1.06);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -288,7 +343,7 @@
                     <button class="choice-button choice-yes" id="yesButton" type="button" onclick="selectYes()">YES 💗</button>
                     <button class="choice-button choice-no" id="noButton" type="button">NO 🙅‍♀️</button>
                 </div>
-                <div class="choice-hint">The “No” button is shy and moves fast… good luck catching it.</div>
+                <div class="choice-hint">The “No” button is shy and moves fast (like you)… good luck catching it.</div>
             </div>
         </div>
     </div>
@@ -324,6 +379,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="yesPopup" aria-hidden="true">
+        <div class="popup-card" role="dialog" aria-modal="true" aria-labelledby="yesPopupTitle">
+            <h3 id="yesPopupTitle">I love you azizam! 💖</h3>
+            <p>You just made my heart do a happy dance.</p>
+            <button type="button" id="yesPopupButton">I love you too ❤️</button>
         </div>
     </div>
 
@@ -409,6 +472,9 @@
             resetNoButton();
         });
 
+        const yesPopup = document.getElementById('yesPopup');
+        const yesPopupButton = document.getElementById('yesPopupButton');
+
         function attemptSms(message) {
             const smsUrl = `sms:?&body=${encodeURIComponent(message)}`;
             if (isMobile) {
@@ -418,17 +484,18 @@
 
         // Select YES
         function selectYes() {
-            const questionPage = document.getElementById('questionPage');
-            const revealPage = document.getElementById('revealPage');
-
             attemptSms('I love you azizam!');
             createConfetti();
-
-            setTimeout(() => {
-                questionPage.style.display = 'none';
-                revealPage.classList.add('active');
-            }, 500);
+            yesPopup.classList.add('show');
         }
+
+        yesPopupButton.addEventListener('click', () => {
+            const questionPage = document.getElementById('questionPage');
+            const revealPage = document.getElementById('revealPage');
+            yesPopup.classList.remove('show');
+            questionPage.style.display = 'none';
+            revealPage.classList.add('active');
+        });
 
         noButton.addEventListener('click', (event) => {
             event.preventDefault();
