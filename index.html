@@ -226,6 +226,11 @@
             border-left: 5px solid #ff69b4;
         }
 
+        #loveList {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
         .blur-overlay {
             position: relative;
             filter: blur(8px);
@@ -355,26 +360,16 @@
                 <div class="letter-content">
                     <h2 class="letter-title">100 Things I Love About You 💖</h2>
                     
-                    <div class="letter-preview blur-overlay">
-                        <p>1. Your smile that lights up my entire world...</p>
-                        <p>2. The way you laugh at my terrible jokes...</p>
-                        <p>3. Your kindness towards everyone you meet...</p>
-                        <p>4. How you make every ordinary moment special...</p>
-                        <p>5. Your beautiful eyes that I get lost in...</p>
-                        <p>6. The warmth of your hugs that feel like home...</p>
-                        <p>7. Your intelligence and the way you see the world...</p>
-                        <p>8. How you always know how to make me feel better...</p>
-                        <p>...</p>
-                        <p>100. Everything. Simply everything about you. ❤️</p>
-                    </div>
+                    <div class="letter-preview" id="loveList"></div>
 
                     <div class="unlock-message">
-                        <span class="emoji">🔒</span>
-                        <strong>TO UNLOCK THE FULL LIST:</strong>
+                        <span class="emoji">💞</span>
+                        <strong>UNLOCKED: every reason I adore you.</strong>
                         <div class="unlock-steps">
-                            🎂 Bake me a cake<br>
-                            💝 See me on February 14th<br>
-                            💕 Get ready for the sweetest surprise
+                            1. Your smile is my favorite sunrise.<br>
+                            2. Your heart feels like home.<br>
+                            3. I love you more than words can say.<br>
+                            4. And I will keep loving you forever.
                         </div>
                     </div>
                 </div>
@@ -412,6 +407,115 @@
             heart.style.animationDelay = Math.random() * 5 + 's';
             heart.style.animationDuration = (10 + Math.random() * 10) + 's';
             heartBg.appendChild(heart);
+        }
+
+        const loveItems = [
+            'Your smile that lights up my entire world.',
+            'The way you laugh and make even my worst days better.',
+            'Your kindness toward everyone around you.',
+            'How you make ordinary moments feel magical.',
+            'Your beautiful eyes that make me forget everything else.',
+            'The warmth of your hugs that feel like home.',
+            'Your intelligence and the way you think so deeply.',
+            'How you always know how to calm my heart.',
+            'Your gentleness and the softness of your soul.',
+            'The way you listen to me like I am the most important person in the world.',
+            'Your sense of humor that turns awkward moments into memories.',
+            'The little things you do that say so much without words.',
+            'Your strength and the way you carry yourself with grace.',
+            'The way you make me feel seen and understood.',
+            'Your compassion that makes the world kinder.',
+            'Your confidence that is quiet, beautiful, and irresistible.',
+            'The way your presence instantly makes me feel safe.',
+            'Your love for the people you care about.',
+            'How you make my heart beat faster in the best way.',
+            'The way you look at me like I am yours and home.',
+            'Your sweet voice that I could listen to forever.',
+            'The way you care about the details that matter.',
+            'Your elegance and natural charm.',
+            'How your happiness becomes my happiness too.',
+            'The way you always bring peace to my mind.',
+            'Your creativity and the way you see beauty everywhere.',
+            'How you can make me laugh even when I am sad.',
+            'Your patience with me and my silly thoughts.',
+            'The way you inspire me to become better.',
+            'Your sincerity and how genuine you are.',
+            'How you make even silence feel full of love.',
+            'The comfort of knowing you are there.',
+            'Your dreams and the way you chase them with courage.',
+            'The little blush that appears when you are shy.',
+            'How your love makes my life feel brighter.',
+            'The way you carry kindness in every part of you.',
+            'Your courage in facing life so beautifully.',
+            'How much joy you bring simply by being yourself.',
+            'The way you turn my worries into calm.',
+            'Your beautiful soul and the tenderness inside it.',
+            'The way you make me proud to call you mine.',
+            'How naturally you make every room feel warmer.',
+            'Your faith in people and in love.',
+            'The way you make me want to be a better man.',
+            'Your honesty, even when it is hard.',
+            'The way you never fail to make me smile.',
+            'The quiet strength in your heart.',
+            'The way you make me feel lucky just by your presence.',
+            'Your unstoppable warmth and grace.',
+            'How you always somehow know what I need.',
+            'The way your touch makes everything else fade away.',
+            'Your beautiful laugh that is music to my ears.',
+            'The way you make me want to protect your happiness forever.',
+            'How every memory with you feels like a treasure.',
+            'The way you make my future feel full of light.',
+            'Your curiosity and the way you see the world with wonder.',
+            'The way you challenge me to dream bigger.',
+            'Your loyalty and the way you love with your whole heart.',
+            'How your love changes the way I see myself.',
+            'The way your heart feels so gentle and so strong at once.',
+            'Your unique spark that no one else has.',
+            'How you make my life feel more colorful and meaningful.',
+            'Your sweetness that never feels forced.',
+            'The way you make every ordinary day feel like a love story.',
+            'How beautiful your soul is when you care for others.',
+            'The way you make me feel like the luckiest person alive.',
+            'Your ability to make love feel easy, safe, and real.',
+            'How you are both my comfort and my favorite adventure.',
+            'The way you make me want to slow down and cherish every second.',
+            'Your beautiful personality, bright and unforgettable.',
+            'How you can fill a room with warmth just by being in it.',
+            'The way your love gives my life direction and peace.',
+            'Your simple acts of love that mean more than grand gestures.',
+            'The way your dreams and your heart feel so full of life.',
+            'How much I admire the person you are becoming.',
+            'The way you make me feel home even when we are far apart.',
+            'Your quiet strength, your loud joy, and your tender soul.',
+            'How your love transforms even the smallest moments.',
+            'The way your heart always feels like a safe place.',
+            'Your playful spirit and the way it makes life fun.',
+            'How you make my world feel softer and sweeter.',
+            'The way you never stop being beautifully you.',
+            'Your ability to make love feel natural, deep, and beautiful.',
+            'The way you make me grateful for every breath I get to spend with you.',
+            'Your kindness, your fire, your calm, your magic.',
+            'How you make my heart feel home and my soul feel alive.',
+            'The way you make the future look brighter just by being in it.',
+            'Your love, which is my favorite place to rest.',
+            'The way you make my world feel whole.',
+            'Your courage to love so openly and so deeply.',
+            'The way you are my favorite person to think about.',
+            'How every day becomes better because you are in it.',
+            'The way you change the air around me just by being near.',
+            'Your beauty, inside and out, in ways I can never fully explain.',
+            'The way I love you more each day with every little memory.',
+            'How you make my heart feel full without needing anything else.',
+            'The way your love feels like a promise I never want to break.',
+            'How I love your laugh, your eyes, your mind, your soul, and everything in between.',
+            'Everything. Simply everything about you. ❤️'
+        ];
+
+        function renderLoveList() {
+            const loveList = document.getElementById('loveList');
+            loveList.innerHTML = loveItems
+                .map((item, index) => `<p>${index + 1}. ${item}</p>`)
+                .join('');
         }
 
         const noButton = document.getElementById('noButton');
@@ -500,6 +604,7 @@
         yesPopupButton.addEventListener('click', () => {
             const questionPage = document.getElementById('questionPage');
             const revealPage = document.getElementById('revealPage');
+            renderLoveList();
             yesPopup.classList.remove('show');
             questionPage.style.display = 'none';
             revealPage.classList.add('active');
